@@ -44,21 +44,21 @@ $c = ['i1', 'i2 ', 'i3', 'i4'];
 print_r( $c );
 print $b[2];
 var_dump($b); // print with more info
-//It not prints but returns the things: print_r( $c, 1 )
+//It does not prints but returns the things: print_r( $c, 1 )
 $data = print_r( $c, 1 );
-print $data.'<br>';
+print $data.'**** <br>';
 
 // array with for loop,    sizeof() === count()
 for($i = 0; $i < count($c); $i++) {
     print $c[$i];
 }
-print '<br>';
+print ' - for loop <br>';
 
 // array with foreach
 foreach($b as $item) {
     print $item. " ";
 }
-print '<br>';
+print  '- foreach <br>';
 
 // associative array
 $d = [
