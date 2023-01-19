@@ -41,7 +41,7 @@ if(count($errors) > 0){
         } else {
             $_SESSION["flash"]["msg"] = ['value' => ['Sikeres belépés.'], 'type' => 'successmsg'];
             $_SESSION["user"] = $user_in_db;
-            header("location: profile.php");
+            header("location: index.php");
             exit; // OR return;
         }
     }

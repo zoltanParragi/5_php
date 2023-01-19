@@ -40,18 +40,10 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     }
 }
 
-/* $length = mb_strlen(trim($password), 'UTF-8');
-if($length < 4 or $length > 20) {
-    $errors[] = "password length error<br>";
-} elseif($password !== $password_confirmation) {
-    $errors[] = "password confirmation error<br>";
-} */
-
 if(count($errors) > 0){
     $_SESSION["flash"]["post"] = $post;
     $_SESSION["flash"]["msg"] = ['value' => $errors, 'type' => 'errormsg'];
 } else {
-    //$password = password_hash($password, PASSWORD_DEFAULT);
     $email = mysqli_real_escape_string($connection, $email);
     $name = mysqli_real_escape_string($connection, $name);
     

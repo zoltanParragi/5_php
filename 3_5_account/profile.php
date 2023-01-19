@@ -38,24 +38,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Profile</title>
-    <style>
-        .errormsg, .successmsg{
-            border-radius: 5px;
-            margin: 10px;
-            padding: 10px;
-        }
-        .errormsg{
-            background: rgba(255, 0, 0, 0.6);
-            color: #fff;
-        }
-        .successmsg{
-            background: green;
-            color: #fff;
-        }
-    </style>
 </head>
 <body>
+    <?php 
+        include("navbar.php");
+    ?>
+<!-- 
     <?php
         if(isset($_SESSION["flash"]["msg"])){
     ?>
@@ -68,26 +58,21 @@
         </div>
     <?php
         }
-    ?>
-    <h1>Profilom</h1>
-    <h4>Adatok módosítása</h4>
-    <form action="server3.php" method="post">
-        <label for="name">Név: </label>
-        <input type="text" value="<?php getinput("name", $user) ?>" name="name" id="name" placeholder="Add meg a neved!">
-        <!-- Muting warnings:
-        #1 @       @print($_SESSION["post"]["name"])
-        #2 ?? ''   print($_SESSION["post"]["name"])??''
-        -->
-        <br><br>
-        <label for="name">Email: </label>
-        <input type="text" value="<?php getinput("email", $user) ?>" name="email" id="email" placeholder="Add meg az email címed!">
-        <br><br>
-        <!-- <input type="password" name="password" placeholder="Add meg a jelszavad!">
-        <br><br>
-        <input type="password" name="password_confirmation" placeholder="Add meg a jelszavad mégegyszer!">
-        <br><br> -->
-        <button>Mentés</button>
-    </form>
+    ?> -->
+    
+    <div class="mainWrapper">
+        <h1>Profilom</h1>
+        <h4>Adatok módosítása</h4>
+        <form action="server3.php" method="post">
+            <label for="name">Név: </label>
+            <input type="text" value="<?php getinput("name", $user) ?>" name="name" id="name" placeholder="Add meg a neved!">
+            <br><br>
+            <label for="name">Email: </label>
+            <input type="text" value="<?php getinput("email", $user) ?>" name="email" id="email" placeholder="Add meg az email címed!">
+            <br><br>
+            <button>Mentés</button>
+        </form>
+    </div>
 </body>
 </html>
 <?php unset($_SESSION["flash"]);?>

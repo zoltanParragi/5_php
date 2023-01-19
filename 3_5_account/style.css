@@ -1,0 +1,43 @@
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+
+.nav>div {
+    margin: 5px 20px;
+}
+
+.nav a, .nav>div:last-child {
+    text-decoration: none;
+    color: rgb(214, 42, 42);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav>div:last-child {
+    color: rgb(42, 21, 136);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.mainWrapper{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.errormsg, .successmsg{
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 300px;
+}
+.errormsg{
+    background: rgba(255, 0, 0, 0.6);
+    color: #fff;
+}
+.successmsg{
+    background: green;
+    color: #fff;
+}
