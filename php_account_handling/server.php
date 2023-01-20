@@ -7,13 +7,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
-
+include('config.php');
 #3
 //exits if $_SERVER["REQUEST_METHOD"] is not GET / POST / etc.:
-/* if($_SERVER["REQUEST_METHOD"] !== "GET") {
-    http_response_code(404);
+if($_SERVER["REQUEST_METHOD"] !== "GET") {
+    http_response_code(403);
     exit;
-} */
+}
 
 // print $_REQUEST["name"]; A $_REQUEST egy asszociatív tömb, ami tartalmazza az elküldött adatokat.
 // print $_POST["name"]; A $_POST egy asszociatív tömb, ami tartalmazza az elküldött adatokat.
@@ -88,12 +88,12 @@ if(count($errors) > 0){
         //Server settings
         $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.eu.mailgun.org';                     //Set the SMTP server to send through
+        $mail->Host       = SMTP_HOST;                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'postmaster@appworld.hu';                     //SMTP username
-        $mail->Password   = '91f232b07763ed50f2df2ff4571c95d4-53ce4923-e6b21b6b';                               //SMTP password
+        $mail->Username   = SMTP_USERNAME;                     //SMTP username
+        $mail->Password   = SMTP_PASSWORD;                               //SMTP password
         //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port       = SMTP_PORT;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         $mail->CharSet = 'UTF-8';
         //Recipients
         $mail->setFrom('info@zoltan.com', 'Feladó: Zoltán');
