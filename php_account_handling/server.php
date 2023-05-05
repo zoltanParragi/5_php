@@ -10,10 +10,10 @@ require 'vendor/autoload.php';
 include('config.php');
 #3
 //exits if $_SERVER["REQUEST_METHOD"] is not GET / POST / etc.:
-if($_SERVER["REQUEST_METHOD"] !== "GET") {
+/* if($_SERVER["REQUEST_METHOD"] !== "GET") {
     http_response_code(403);
     exit;
-}
+} */
 
 // print $_REQUEST["name"]; A $_REQUEST egy asszociatív tömb, ami tartalmazza az elküldött adatokat.
 // print $_POST["name"]; A $_POST egy asszociatív tömb, ami tartalmazza az elküldött adatokat.
